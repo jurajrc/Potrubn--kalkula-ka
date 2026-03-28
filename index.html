@@ -14,7 +14,7 @@
 <h2>Výpočet uhla kolena</h2>
 
 <label>Radius (r):</label>
-<input type="number" inputmode="decimal" step="0.1" autofocus id="radius" oninput="vypocitaj(); vypocitajRez()" list="radius_list"><br>
+<input type="number" inputmode="decimal" autofocus id="radius" oninput="vypocitaj(); vypocitajRez()" list="radius_list"><br>
 <datalist id="radius_list">
     <option value="138">
     <option value="105">
@@ -105,8 +105,14 @@ function vypocitajRez() {
     miestoRezu.innerText ="rez je " + c.toFixed(1) + " mm od okraja kolena";
 
     if (navigator.vibrate) {
-        navigator.vibrate(100);
+        navigator.vibrate([300, 100, 300]);
     }
+    let msg = new SpeechSynthesisUtterance("Rez je " + c.toFixed(1) + " milimetrov");
+    setTimeout(() => {
+        msg.text = "Rez je " + c.toFixed(1) + " milimetrov";
+    }, 2000);
+
+    speechSynthesis.speak(msg);
 }
 </script>
 
