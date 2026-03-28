@@ -103,6 +103,10 @@ function vypocitajRez() {
     //console.log(a);
     // výstup
     miestoRezu.innerText ="rez je " + c.toFixed(1) + " mm od okraja kolena";
+
+    if (navigator.vibrate) {
+        navigator.vibrate(100);
+    }
 }
 </script>
 
