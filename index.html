@@ -2,20 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Výpočet uhla kolena</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body { font-family: Arial; }
-        input { margin: 5px; padding: 5px; }
-        #chyba { color: red; }
-    </style>
+    
 </head>
 <body>
 
     <h2>Výpočet uhla kolena</h2>
 
     <label>Voľba kolena</label>
-    <select id="vyber_kolena" onchange="nastavRozmery(); vypocitajRez(); vypocitaj()">
+    <select id="vyber_kolena" autofocus onchange="nastavRozmery(); vypocitajRez(); vypocitaj()">
         <option value="">-- vyber --</option>
         <option value="138,108">DN100 veľké</option>
         <option value="100,108">DN100 malé</option>
@@ -26,7 +23,7 @@
     <br><br>
 
     <label>Radius kolena (mm):</label>
-    <input type="number" inputmode="decimal" autofocus id="radius" oninput="vypocitaj();     vypocitajRez()" list="radius_list"><br>
+    <input type="number" inputmode="decimal"  id="radius" oninput="vypocitaj();     vypocitajRez()" list="radius_list"><br>
     <datalist id="radius_list">
         <option value="138">
         <option value="105">
@@ -39,7 +36,7 @@
             <option value="90">
         </datalist>
 
-    <label>Odskok:</label>
+    <label>Odskok dvoch kolien</label>
     <input type="number" id="odskok" oninput="vypocitaj(); vypocitajRez()"><br>
 
     <article hidden>
