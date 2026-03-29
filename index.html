@@ -109,7 +109,7 @@ function vypocitajRez() {
     }
     let msg = new SpeechSynthesisUtterance("Rez je " + c.toFixed(1) + " milimetrov");
     setTimeout(() => {
-        msg.text = "Rez je " + c.toFixed(1) + " milimetrov od okraja kolena a skus to posrať ti trtko";
+        msg.text = "Rez je " + c.toFixed(1) + " milimetrov od okraja kolena a uhol" + uhol.toFixed(1) + "so nastav z digitalnym uhlomerom ";
     }, 2000);
 
     speechSynthesis.speak(msg);
