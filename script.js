@@ -1,3 +1,17 @@
+// doplňovanie radiusu a priemeru z selectu
+function nastavRozmery() {
+    let select = document.getElementById("vyber_kolena").value;
+    console.log(select);
+    
+    if (select !== "") {
+        let hodnoty = select.split(",");
+        //console.log(hodnoty);
+        document.getElementById("radius").value = hodnoty[0];
+        document.getElementById("priemer").value = hodnoty[1];
+    }    
+}
+
+// Výpočet uhla
 function vypocitaj() {
     let r = parseFloat(document.getElementById("radius").value);
     let o = parseFloat(document.getElementById("odskok").value);
@@ -36,19 +50,6 @@ function vypocitaj() {
 
     uholInput.value = uhol.toFixed(1) + "°";
     uholl.innerText = "Uhol bude " + uhol.toFixed(1).replace(".", ",") + "°";
-}
-
-// doplňovanie radiusu a priemeru z selectu
-function nastavRozmery() {
-    let select = document.getElementById("vyber_kolena").value;
-    console.log(select);
-    
-    if (select !== "") {
-        let hodnoty = select.split(",");
-        //console.log(hodnoty);
-        document.getElementById("radius").value = hodnoty[0];
-        document.getElementById("priemer").value = hodnoty[1];
-    }    
 }
 
 // Výpočet rezu

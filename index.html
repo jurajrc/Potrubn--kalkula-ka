@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Výpočet uhla kolena</title>
+    <link rel="stylesheet" href="style.css ">
     <style>
         body { font-family: Arial; }
         input { margin: 5px; padding: 5px; }
@@ -11,50 +12,51 @@
 </head>
 <body>
 
-<h2>Výpočet uhla kolena</h2>
+    <h2>Výpočet uhla kolena</h2>
 
-<label>Vyber kolena:</label>
-<select id="vyber_kolena" onchange="nastavRozmery(); vypocitajRez(); vypocitaj()">
-    <option value="">-- vyber --</option>
-    <option value="138,108">DN100 veľké</option>
-    <option value="100,108">DN100 malé</option>
-    <option value="116,90">DN90 veľké</option>
-    <option value="90,90">DN90 malé</option>
-</select>
+    <label>Vyber kolena</label>
+    <select id="vyber_kolena" onchange="nastavRozmery(); vypocitajRez(); vypocitaj()">
+        <option value="">-- vyber --</option>
+        <option value="138,108">DN100 veľké</option>
+        <option value="100,108">DN100 malé</option>
+        <option value="116,90">DN90 veľké</option>
+        <option value="90,90">DN90 malé</option>
+    </select>
 
-<br><br>
+    <br><br>
 
-<label>Radius kolena (mm):</label>
-<input type="number" inputmode="decimal" autofocus id="radius" oninput="vypocitaj(); vypocitajRez()" list="radius_list"><br>
-<datalist id="radius_list">
-    <option value="138">
-    <option value="105">
-</datalist>
-
-<label>Odskok:</label>
-<input type="number" id="odskok" oninput="vypocitaj(); vypocitajRez()"><br>
-
-
-<label>Uhol:</label>
-<input type="text" id="uhol" readonly><br>
-
-<label>Priemer potrubia (mm)</label>
-    <input type="number" id="priemer" oninput="vypocitajRez()" list="priemer_list"><br>
-    <datalist id="priemer_list">
-        <option value="108">
-        <option value="90">
+    <label>Radius kolena (mm):</label>
+    <input type="number" inputmode="decimal" autofocus id="radius" oninput="vypocitaj();     vypocitajRez()" list="radius_list"><br>
+    <datalist id="radius_list">
+        <option value="138">
+        <option value="105">
     </datalist>
 
-<p id="uholl">Uhol bude:</p>
+    <label>Priemer potrubia (mm)</label>
+        <input type="number" id="priemer" oninput="vypocitajRez()" list="priemer_list"><br>
+        <datalist id="priemer_list">
+            <option value="108">
+            <option value="90">
+        </datalist>
 
-<p id="chyba"></p>
+    <label>Odskok:</label>
+    <input type="number" id="odskok" oninput="vypocitaj(); vypocitajRez()"><br>
+
+    <article hidden>
+        <label>Uhol:</label>
+        <input type="text" id="uhol" readonly><br>
+    </article>
+
+    <p id="uholl">Uhol bude:</p>
+
+    <p id="chyba"></p>
 
 
-<p id="miesto_rezu">Miesto rezu:</p>
+    <p id="miesto_rezu">Miesto rezu:</p>
 
-<script 
-    src="script.js" >
-</script>
+    <script 
+        src="script.js" >
+    </script>
 
 </body>
 </html>
