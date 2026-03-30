@@ -1,5 +1,6 @@
 // premenne
 
+
 // doplňovanie radiusu a priemeru z selectu
 function nastavRozmery() {
     let select = document.getElementById("vyber_kolena").value;
@@ -82,9 +83,9 @@ function vypocitajRez() {
     // výstup
     miestoRezu.innerText ="Rez je " + c.toFixed(1).replace(".", ",") + " mm od okraja kolena";
 
-    //if (navigator.vibrate) {
-    //    navigator.vibrate([300, 100, 300]);
-    //}
+    if (navigator.vibrate) {
+        navigator.vibrate([300, 100, 300]);
+    }
 
     let msg = new SpeechSynthesisUtterance("Rez je " + c.toFixed(1).replace(".", ",") + " milimetrov od okraja kolena a uhol" + uhol.toFixed(1) + "si nastav z digitalnym uhlomerom");
     setTimeout(() => {
@@ -94,4 +95,14 @@ function vypocitajRez() {
     //speechSynthesis.speak(msg);
     //console.log(c.toFixed(1).replace(".", ","));
     
+}
+
+let timeout1;
+
+function spustiVypocerSOneskocenim() {
+    clearTimeout(timeout1);
+    timeout1 = setTimeout(() => {
+        vypocitaj();
+        vypocitajRez();
+    }, 1500);
 }

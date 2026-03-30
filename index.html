@@ -12,7 +12,7 @@
     <h2>Výpočet uhla kolena</h2>
 
     <label for="vyber_kolena">Vyber koleno:</label>
-    <select id="vyber_kolena" autofocus onchange="nastavRozmery(); vypocitajRez(); vypocitaj()">
+    <select id="vyber_kolena" autofocus onchange="nastavRozmery(); spustiVypocerSOneskocenim()">
         <option value="">Vyber koleno</option>
         <option value="142,108">DN100 veľké</option>
         <option value="101,108">DN100 malé</option>
@@ -25,21 +25,21 @@
     <br><br>
 
     <label for="radius">Radius kolena (mm):</label>
-    <input type="number" inputmode="decimal"  id="radius" oninput="vypocitaj();     vypocitajRez()" list="radius_list"><br>
+    <input type="number" inputmode="decimal"  id="radius" oninput="spustiVypocerSOneskocenim()" list="radius_list"><br>
     <datalist id="radius_list">
         <option value="138">
         <option value="105">
     </datalist>
 
     <label for="priemer">Priemer potrubia (mm)</label>
-        <input type="number" id="priemer" oninput="vypocitajRez()" list="priemer_list"><br>
+        <input type="number" id="priemer" oninput="spustiVypocerSOneskocenim()" list="priemer_list"><br>
         <datalist id="priemer_list">
             <option value="108">
             <option value="90">
         </datalist>
 
     <label for="odskok">Odskok dvoch kolien (mm)</label>
-    <input type="number" id="odskok" oninput="vypocitaj(); vypocitajRez()"><br>
+    <input type="number" id="odskok" oninput="spustiVypocerSOneskocenim()"><br>
 
     <article hidden>
         <label for="uhol">Uhol:</label>
