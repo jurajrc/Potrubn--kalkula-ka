@@ -11,7 +11,7 @@
 
     <h2>Výpočet uhla kolena</h2>
 
-    <label></label>
+    <label for="vyber_kolena">Vyber koleno:</label>
     <select id="vyber_kolena" autofocus onchange="nastavRozmery(); vypocitajRez(); vypocitaj()">
         <option value="">Vyber koleno</option>
         <option value="142,108">DN100 veľké</option>
@@ -24,33 +24,35 @@
 
     <br><br>
 
-    <label>Radius kolena (mm):</label>
+    <label for="radius">Radius kolena (mm):</label>
     <input type="number" inputmode="decimal"  id="radius" oninput="vypocitaj();     vypocitajRez()" list="radius_list"><br>
     <datalist id="radius_list">
         <option value="138">
         <option value="105">
     </datalist>
 
-    <label>Priemer potrubia (mm)</label>
+    <label for="priemer">Priemer potrubia (mm)</label>
         <input type="number" id="priemer" oninput="vypocitajRez()" list="priemer_list"><br>
         <datalist id="priemer_list">
             <option value="108">
             <option value="90">
         </datalist>
 
-    <label>Odskok dvoch kolien (mm)</label>
+    <label for="odskok">Odskok dvoch kolien (mm)</label>
     <input type="number" id="odskok" oninput="vypocitaj(); vypocitajRez()"><br>
 
     <article hidden>
-        <label>Uhol:</label>
+        <label for="uhol">Uhol:</label>
         <input type="text" id="uhol" readonly><br>
     </article>
 
-    <p id="chyba"></p>
+    <p class="allert" id="chyba"></p>
 
     <p id="uholl">Uhol bude:</p>
 
     <p id="miesto_rezu">Miesto rezu:</p>
+
+    <p class="allert">traba ešte rozmer 90 veľke</p>
 
     <script 
         src="script.js" >
