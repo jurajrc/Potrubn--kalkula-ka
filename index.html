@@ -14,10 +14,12 @@
     <label></label>
     <select id="vyber_kolena" autofocus onchange="nastavRozmery(); vypocitajRez(); vypocitaj()">
         <option value="">Vyber koleno</option>
-        <option value="138,108">DN100 veľké</option>
-        <option value="100,108">DN100 malé</option>
-        <option value="116,90">DN90 veľké</option>
-        <option value="90,90">DN90 malé</option>
+        <option value="142,108">DN100 veľké</option>
+        <option value="101,108">DN100 malé</option>
+        <option value="116,90">DN80 veľké</option>
+        <option value="77,90">DN80 malé</option>
+        <option value="76,60">DN50 veľké</option>
+        <option value="51,60">DN50 malé</option>
     </select>
 
     <br><br>
@@ -36,7 +38,7 @@
             <option value="90">
         </datalist>
 
-    <label>Odskok dvoch kolien</label>
+    <label>Odskok dvoch kolien (mm)</label>
     <input type="number" id="odskok" oninput="vypocitaj(); vypocitajRez()"><br>
 
     <article hidden>
@@ -44,10 +46,9 @@
         <input type="text" id="uhol" readonly><br>
     </article>
 
-    <p id="uholl">Uhol bude:</p>
-
     <p id="chyba"></p>
 
+    <p id="uholl">Uhol bude:</p>
 
     <p id="miesto_rezu">Miesto rezu:</p>
 

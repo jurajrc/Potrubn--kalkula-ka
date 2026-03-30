@@ -34,7 +34,7 @@ function vypocitaj() {
     }
 
     if (o > 2 * r) {
-        chyba.innerText = "Odskok je príliš veľký, pre daný radius je max odskok " + max + " mm";
+        chyba.innerText = "Odskok nad " + max + " mm sú už dve celé kolená";
         return;
     }
 
@@ -66,7 +66,7 @@ function vypocitajRez() {
     if (!D || !r || !uhol) {
         return;
     }
-    
+
     miestoRezu.innerText = "";
 
     // premena stupňov na radiány
