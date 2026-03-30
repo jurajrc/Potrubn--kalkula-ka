@@ -49,7 +49,7 @@ function vypocitaj() {
     uhol = uhol * (180 / Math.PI);
 
     uholInput.value = uhol.toFixed(1) + "°";
-    uholl.innerText = "Uhol bude " + uhol.toFixed(1).replace(".", ",") + "°";
+    uholl.innerText = "Uhol je " + uhol.toFixed(1).replace(".", ",") + "°";
 }
 
 // Výpočet rezu
@@ -61,12 +61,13 @@ function vypocitajRez() {
     let miestoRezu = document.getElementById("miesto_rezu");
 
     
-    miestoRezu.innerText = "";
-
+    
     // Kontrola vstupov
     if (!D || !r || !uhol) {
         return;
     }
+    
+    miestoRezu.innerText = "";
 
     // premena stupňov na radiány
     const uholRad = (uhol * Math.PI) / 180;
