@@ -1,4 +1,32 @@
-// premenne
+
+// animacia čisel
+function animujCislo(testPred, velicina, textId, konecnaHodnota, trvanie = 1500) {
+    let start = null;
+
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    function krok(cas) {
+        if (!start) start = cas;
+        let progress = cas - start;
+
+        let percento = progress / trvanie;
+        if (percento > 1) percento = 1;
+
+        let eased = easeOutCubic(percento);
+        let aktualnaHodnota = konecnaHodnota * eased;
+
+        document.getElementById(textId).textContent =
+            testPred + aktualnaHodnota.toFixed(1).replace(".", ",") + velicina;
+
+        if (percento < 1) {
+            requestAnimationFrame(krok);
+        }
+    }
+
+    requestAnimationFrame(krok);
+}
 
 
 // doplňovanie radiusu a priemeru z selectu
@@ -48,11 +76,18 @@ function vypocitaj() {
         return;
     }
 
+    // výpočet uhla v radiánech a převod na stupně
     let uhol = Math.acos(hodnota);
     uhol = uhol * (180 / Math.PI);
 
+    // vyplní input
     uholInput.value = uhol.toFixed(1) + "°";
-    uholl.innerText = "Uhol je " + uhol.toFixed(1).replace(".", ",") + "°";
+
+    // vyplní text p id "uholl" zatial vypnuté
+    //uholl.innerText = "Uhol je " + uhol.toFixed(1).replace(".", ",") + "°";
+    // animace čísla
+    animujCislo("Uhol je: ", "°", "uholl", uhol, 1500);
+
 }
 
 // Výpočet rezu
@@ -81,12 +116,15 @@ function vypocitajRez() {
 
     
     // výstup
-    miestoRezu.innerText ="Rez je " + c.toFixed(1).replace(".", ",") + " mm od okraja kolena";
+    //miestoRezu.innerText ="Rez je " + c.toFixed(1).replace(".", ",") + " mm od okraja kolena";
+    animujCislo("Miesto rezu je: ", "mm", "miesto_rezu", c, 1500);
 
+    // vibrácia
     if (navigator.vibrate) {
         navigator.vibrate([300, 100, 300]);
     }
 
+    // hlasová správa
     let msg = new SpeechSynthesisUtterance("Rez je " + c.toFixed(1).replace(".", ",") + " milimetrov od okraja kolena a uhol" + uhol.toFixed(1) + "si nastav z digitalnym uhlomerom");
     setTimeout(() => {
         msg.text = "Rez je " + c.toFixed(1).replace(".", ",") + " milimetrov ";
