@@ -1,6 +1,6 @@
 
 // animacia čisel
-function animujCislo(testPred, velicina, textId, konecnaHodnota, trvanie = 1500) {
+function animujCislo(textPred, textZa = "", velicina, textId, konecnaHodnota, trvanie = 1500) {
     let start = null;
 
     function easeOutCubic(t) {
@@ -18,7 +18,7 @@ function animujCislo(testPred, velicina, textId, konecnaHodnota, trvanie = 1500)
         let aktualnaHodnota = konecnaHodnota * eased;
 
         document.getElementById(textId).textContent =
-            testPred + aktualnaHodnota.toFixed(1).replace(".", ",") + velicina;
+            textPred + aktualnaHodnota.toFixed(1).replace(".", ",") + velicina + textZa;
 
         if (percento < 1) {
             requestAnimationFrame(krok);
@@ -86,7 +86,7 @@ function vypocitaj() {
     // vyplní text p id "uholl" zatial vypnuté
     //uholl.innerText = "Uhol je " + uhol.toFixed(1).replace(".", ",") + "°";
     // animace čísla
-    animujCislo("Uhol je: ", "°", "uholl", uhol, 1500);
+    animujCislo("Uhol je: ","", "°", "uholl", uhol, 1500);
 
 }
 
@@ -117,7 +117,7 @@ function vypocitajRez() {
     
     // výstup
     //miestoRezu.innerText ="Rez je " + c.toFixed(1).replace(".", ",") + " mm od okraja kolena";
-    animujCislo("Miesto rezu je: ", "mm", "miesto_rezu", c, 1500);
+    animujCislo("Miesto rezu je: ","", "mm", "miesto_rezu", c, 1500);
 
     // vibrácia
     if (navigator.vibrate) {
