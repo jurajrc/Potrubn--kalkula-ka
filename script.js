@@ -1,4 +1,11 @@
 
+// zámok orientácie dispeja na portrét
+if (screen.orientation) {
+  screen.orientation.lock("portrait").catch(function(error) {
+    console.log("Orientation lock failed:", error);
+  });
+}
+
 // animacia čisel
 function animujCislo(textPred, textZa = "", velicina, textId, konecnaHodnota, trvanie = 1500) {
     let start = null;
@@ -98,8 +105,6 @@ function vypocitajRez() {
     const uhol = parseFloat(document.getElementById("uhol").value);
     let miestoRezu = document.getElementById("miesto_rezu");
 
-    
-    
     // Kontrola vstupov
     if (!D || !r || !uhol) {
         return;
@@ -114,7 +119,6 @@ function vypocitajRez() {
     const a = r - (D / 2);
     const c = Math.sqrt(2 * a * a * (1 - Math.cos(uholRad)));
 
-    
     // výstup
     //miestoRezu.innerText ="Rez je " + c.toFixed(1).replace(".", ",") + " mm od okraja kolena";
     animujCislo("Miesto rezu je: ","", "mm", "miesto_rezu", c, 1500);
@@ -132,7 +136,6 @@ function vypocitajRez() {
 
     //speechSynthesis.speak(msg);
     //console.log(c.toFixed(1).replace(".", ","));
-    
 }
 
 let timeout1;
