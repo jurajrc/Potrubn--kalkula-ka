@@ -11,6 +11,7 @@
 
     <h2>Výpočet uhla kolena</h2>
 
+    <article class="container">
     <label for="vyber_kolena">Vyber koleno:</label>
     <select id="vyber_kolena" autofocus onchange="nastavRozmery(); spustiVypocerSOneskocenim()">
         <option value="">Vyber koleno</option>
@@ -22,28 +23,27 @@
         <option value="51,60">DN50 malé</option>
     </select>
 
-    <br><br>
 
     <label for="radius">Radius kolena (mm):</label>
-    <input type="number" inputmode="decimal"  id="radius" oninput="spustiVypocerSOneskocenim()" list="radius_list"><br>
+    <input type="number" inputmode="decimal"  id="radius" oninput="spustiVypocerSOneskocenim()" list="radius_list">
     <datalist id="radius_list">
         <option value="138">
         <option value="105">
     </datalist>
 
     <label for="priemer">Priemer potrubia (mm)</label>
-        <input type="number" id="priemer" oninput="spustiVypocerSOneskocenim()" list="priemer_list"><br>
+        <input type="number" id="priemer" oninput="spustiVypocerSOneskocenim()" list="priemer_list">
         <datalist id="priemer_list">
             <option value="108">
             <option value="90">
         </datalist>
 
     <label for="odskok">Odskok dvoch kolien (mm)</label>
-    <input type="number" id="odskok" oninput="spustiVypocerSOneskocenim()"><br>
+    <input type="number" id="odskok" oninput="spustiVypocerSOneskocenim()">
 
     <article hidden>
         <label for="uhol">Uhol:</label>
-        <input type="text" id="uhol" readonly><br>
+        <input type="text" id="uhol" readonly>
     </article>
 
     <p class="allert" id="chyba"></p>
@@ -51,6 +51,8 @@
     <p id="uholl">Uhol bude:</p>
 
     <p id="miesto_rezu">Miesto rezu:</p>
+
+    </article>
 
     <script 
         src="script.js" >

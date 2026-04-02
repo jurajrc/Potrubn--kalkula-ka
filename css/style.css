@@ -2,9 +2,13 @@
 /* Základ pre mobil */
 body {
     font-family: Arial, sans-serif;
-    margin: 10px;
+    margin: 10px auto;
     padding: 0;
     background: lightgray;
+    box-sizing: border-box;
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
 }
 
 /* Hlavička */
@@ -12,6 +16,15 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+.container {
+    width: 22em;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 
 /* Label */
 label {
@@ -33,6 +46,7 @@ input, select {
 p {
     font-size: 18px;
     font-weight: bold;
+    margin:8px 0;
 }
 
 /* Chyba */
